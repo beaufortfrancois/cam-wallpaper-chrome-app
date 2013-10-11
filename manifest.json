@@ -1,0 +1,17 @@
+{
+  "name": "Wallpaper Cam",
+  "description": "Just a Chrome Experiment",
+  "version": "1",
+  "permissions": [
+    "notifications",
+    "videoCapture",
+    "wallpaper"
+  ],
+  "icons": { "128": "128.png" },
+  "app": {
+    "background": {
+      "scripts": [ "background.js" ]
+    }
+  },
+  "manifest_version": 2
+}
