@@ -14,7 +14,8 @@ var localStream;
 
 chrome.app.runtime.onLaunched.addListener(function() {
 
-  navigator.webkitGetUserMedia({video: true}, function(stream) {
+  navigator.webkitGetUserMedia({video: true},
+      function(stream) {
 
     localStream = stream;
     chrome.notifications.create('id', {
@@ -42,16 +43,16 @@ chrome.app.runtime.onLaunched.addListener(function() {
           xhr.open('GET', URL.createObjectURL(blob));
           xhr.onload = function() {
             chrome.wallpaper.setWallpaper({
-              wallpaperData: xhr.response,
+              data: xhr.response,
               layout: 'STRETCH',
-              name: 'webcam',
+              filename: 'webcam',
   	    }, draw);
           }
           xhr.send();
         })();
       });
     });
-  });
+  }, function(error) {});
 });
 
 chrome.notifications.onButtonClicked.addListener(stop);
