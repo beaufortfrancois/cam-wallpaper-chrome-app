@@ -61,6 +61,7 @@ chrome.notifications.onClosed.addListener(stop);
 function stop() {
   chrome.notifications.clear('id', function() {
     localStream.stop();
+    window.close(); // Close background page.
   });
 }
 
