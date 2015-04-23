@@ -1,7 +1,8 @@
 {
   "name": "Cam Wallpaper",
   "description": "Just a Chrome Experiment",
-  "version": "1.2",
+  "version": "1.2.1",
+  "minimum_chrome_version": "43",
   "permissions": [
     "notifications",
     "videoCapture",
